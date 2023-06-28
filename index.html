@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>New Asset Form</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+    }
+    
+    .container {
+      max-width: 600px;
+      margin: 0 auto;
+    }
+    
+    .form-group {
+      margin-bottom: 20px;
+    }
+    
+    label {
+      display: block;
+      font-weight: bold;
+      margin-bottom: 5px;
+    }
+    
+    input[type="text"],
+    select {
+      width: 100%;
+      padding: 10px;
+      border-radius: 4px;
+      border: 1px solid #ccc;
+    }
+    
+    textarea {
+      width: 100%;
+      padding: 10px;
+      border-radius: 4px;
+      border: 1px solid #ccc;
+      resize: vertical;
+    }
+    
+    .checkbox-group {
+      margin-top: 5px;
+    }
+    
+    button {
+      padding: 10px 20px;
+      background-color: #4CAF50;
+      color: white;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      font-size: 16px;
+    }
+    
+    button:hover {
+      background-color: #45a08e;
+    }
+  </style>
+</head>
+<body>
+  <div class="login">
+    <h1>New Asset's Price Pprediction Form</h1>
+    <h2>Enter the Asset's data: </h2>
+    <form id="measurement-form"action="{{ url_for('predict')}}"method="post">
+      <div class="form-group">
+          <label for="City">City:</label>
+          <select id="City" name="City">
+            <option value="פתח תקווה">פתח תקווה</option>
+            <option value="נוף הגליל">נוף הגליל</option>
+            <option value="יהוד מונוסון">יהוד מונוסון</option>
+            <option value="כפר סבא">כפר סבא</option>
+            <option value="הוד השרון">הוד השרון</option>
+            <option value="ראשון לציון">ראשון לציו</option>
+            <option value="רמת גן">רמת גן</option>
+            <option value="חולון">חולון</option>
+            <option value="זכרון יעקב">זכרון יעקב</option>
+            <option value="נתניה">נתניה</option>
+            <option value="באר שבע">באר שבע</option>
+            <option value="רעננה">רעננה</option>
+            <option value="בית שאן">בית שאן</option>
+            <option value="ירושלים">ירושלים</option>
+            <option value="רחובות">רחובות</option>
+            <option value="דימונה">דימונה</option>
+            <option value="הרצליה">הרצליה</option>
+            <option value="תל אביב">תל אביב</option>
+            <option value="נהרייה">נהרייה</option>
+            <option value="נס ציונה">נס ציונה</option>
+            <option value="בת ים">בת ים</option>
+            <option value="צפת">צפת</option>
+            <option value="אילת">אילת</option>
+            <option value="מודיעין מכבים רעות">מודיעין מכבים רעות</option>
+            <option value="קרית ביאליק">קרית ביאליק</option>
+            <option value="חיפה">חיפה</option>
+            <option value="אחר">אחר</option>
+          </select>
+        </div>
+        
+        <div class="form-group">
+          <label for="type">Type:</label>
+          <select id="type" name="type">
+            <option value="דירה">דירה</option>
+            <option value="דירת גן">דירת גן</option>
+            <option value="דו משפחת">דו משפחת</option>
+            <option value="בית פרטי">בית פרטי</option>
+            <option value="פנטהאוז">פנטהאוז</option>
+            <option value="דופלקס">דופלקס</option>
+            <option value="דירת גג">דירת גג</option>
+            <option value="קוטג'">קוטג'</option>
+            <option value="בניין">בניין</option>
+            <option value="מגרש">מגרש</option>
+            <option value="קוטג' טורי ">קוטג' טורי </option>
+            <option value="מיני פנטהאוז">מיני פנטהאוז</option>
+            <option value="טריפלקס">טריפלקס</option>
+            <option value="נחלה">נחלה</option>
+            <option value="אחר">אחר</option>
+          </select>
+        </div>
+        
+        <div class="form-group">
+          <label for="room_number">Room Number:</label>
+          <input type="number" id="room_number" name="room_number">
+        </div>
+        
+        <div class="form-group">
+          <label for="Area">Area:</label>
+          <input type="number" id="Area" name="Area">
+        </div>
+        
+        <div class="form-group">
+          <label for="Street">Street:</label>
+          <input type="text" id="Street" name="Street">
+        </div>
+        
+        <div class="form-group">
+          <label for="city_area">City Area:</label>
+          <input type="text" id="city_area" name="city_area">
+        </div>
+
+        
+        <div class="form-group">
+          <label for="condition ">condition :</label>
+          <select id="condition " name="condition ">
+            <option value="renovated">renovated</option>
+            <option value="conserved">conserved</option>
+            <option value="new">new</option>
+            <option value="old">old</option>
+            <option value="not defined">not defined</option>
+            <option value="None">None</option>
+          </select>
+        </div>
+        
+        <div class="form-group">
+          <label for="furniture ">furniture :</label>
+          <select id="furniture " name="furniture ">
+            <option value="not_defined">not_defined</option>
+            <option value="partial">partial</option>
+            <option value="full">full</option>
+          </select>
+        </div>
+        
+        <div class="form-group">
+          <label for="description ">description :</label>
+          <textarea id="description " name="description "></textarea>
+        </div>
+        
+        <div class="checkbox-group">
+          <label for="hasBalcony ">HasBalcony :</label>
+          <input type="checkbox" id="hasBalcony " name="hasBalcony ">
+        </div>
+        
+        
+        <button type="submit">Submit</button>
+      </form>
+    <h3>{{ prediction_text }}</h3>
+  </div>
+ </body>
+</html>
